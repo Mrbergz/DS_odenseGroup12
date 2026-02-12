@@ -1,6 +1,4 @@
 <Solution>
   <Project Path="CarApp1/CarApp1.csproj" Id="f4a3e537-758c-4975-96a9-ddbc92f297cd" />
   <Project Path="HelloWorld/HelloWorld.csproj" />
-  <Project Path="MinLommeregner/MinLommeregner.csproj" Id="41d9f5e3-09f2-4624-9626-f3a3c9741a52" />
-  <Project Path="MyFirstProject/MyFirstProject.csproj" Id="8b47aa40-0194-48c4-9898-5dd04e1fa414" />
 </Solution>
