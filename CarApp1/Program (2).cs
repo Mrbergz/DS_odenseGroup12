@@ -46,27 +46,29 @@
             Console.WriteLine();
 
             Console.WriteLine("----- Biloplysninger -----");
-            Console.WriteLine($"Mærke           : {brand}");
-            Console.WriteLine($"Model           : {model}");
-            Console.WriteLine($"Årgang          : {year}");
-            Console.WriteLine($"Gear            : {gearType}");
+            Console.WriteLine("Mærke".PadRight(18) + ": " + brand.PadRight(15));
+            Console.WriteLine("Model".PadRight(18) + ": " + model.PadRight(15));
+            Console.WriteLine("Årgang".PadRight(18) + ": " + year.ToString().PadRight(15));
+            Console.WriteLine("Gear".PadRight(18) + ": " + gearType.ToString().PadRight(15));
             Console.WriteLine();
 
             Console.WriteLine("----- Brændstof & Kørsel -----");
-            Console.WriteLine($"Brændstofforbrug: {fuelNeeded.ToString("F2")} liter");
-            Console.WriteLine($"Pris            : {tripCost.ToString("F2")} DKK");
+            Console.WriteLine("Brændstofforbrug".PadRight(18) + ": " + fuelNeeded.ToString("F2").PadLeft(10) + " liter");
+            Console.WriteLine("Pris".PadRight(18) + ": " + tripCost.ToString("F2").PadLeft(10) + " DKK");
             Console.WriteLine();
 
             Console.WriteLine("----- Kilometerstand -----");
-            Console.WriteLine($"Start           : {startkm.ToString("F2")} km");
-            Console.WriteLine($"Slut            : {endkm.ToString("F2")} km");
+            Console.WriteLine("Start".PadRight(18) + ": " + startkm.ToString("F2").PadLeft(10) + " km");
+            Console.WriteLine("Slut".PadRight(18) + ": " + endkm.ToString("F2").PadLeft(10) + " km");
 
             Console.WriteLine("========================================");
-
             Console.ReadLine();
+            
             // FULD SÆTNING 
             //Console.WriteLine($"{name} har valgt en {brand} {model} og er fra {year} som har et {gearType} gear");
         }
 
+    }
+}
     }
 }
