@@ -1,108 +1,72 @@
-﻿namespace CarProjekt
+﻿namespace CarApp
 {
+
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hvad hedder du?");
-            string navn = Console.ReadLine();
-            Console.WriteLine("Skriv bilmærke");
+            // BILENS OPLYSNINGER  
+            Console.Write("Navn: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Indtast bilmærke: ");
             string brand = Console.ReadLine();
-            Console.WriteLine("Skriv model");
+
+            Console.Write("Indtast bilmodel: ");
             string model = Console.ReadLine();
-            Console.WriteLine("Hvilken årgang?");
-            int år = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Hvilken geartype?");
-            char geartype = Console.ReadLine()[0];
-            Console.WriteLine($"{navn} har en {brand} {model} fra {år} som har geartype {geartype}!");
-            
-            Console.Write("Hvor langt køre bilen på literen?");​
-            double kmPerLiter = Convert.ToDouble(Console.ReadLine());​​
 
-            Console.Write("Hvor lang er køreturen?");​
-            double distance = Convert.ToDouble(Console.ReadLine());​
+            Console.Write("Indtast årgang: ");
+            int year = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Hvad er prisen pr. liter brændstof i DKK?");​
-            double fuelPrice = Convert.ToDouble(Console.ReadLine());​
+            Console.Write("Indtast geartype (A = Automatisk, M for manuelt): ");
+            char gearType = Console.ReadLine()[0];
 
+            // BRÆNDSTOF OPLYSNINGER
+            Console.Write("Hvad er bilens nuværende kilometerafstand?");
+            double startkm = Convert.ToDouble(Console.ReadLine());
 
-            double fuelNeeded = distance / kmPerLiter;​
-            double tripCost = fuelNeeded * fuelPrice;​
+            Console.Write("Hvor langt køre bilen på literen?");
+            double kmPerLiter = Convert.ToDouble(Console.ReadLine());
 
-​
-            Console.WriteLine($"Brændstofforbrug: {fuelNeeded.ToString("F2")} liter");​
-            Console.WriteLine($"Pris for køreturen: {tripCost.ToString("F2")} DKK");​
-            Console.WriteLine($"Køreturen på {distance} km koster {tripCost.ToString("F2")} DKK og bruger {fuelNeeded.ToString("F2")} liter brændstof.");​
+            Console.Write("Hvor lang er køreturen?");
+            double distance = Convert.ToDouble(Console.ReadLine());
 
-            Console.Write("Hvad er bilens nuværende kilometerafstand?");​
+            Console.Write("Hvad er prisen pr. liter brændstof i DKK?");
+            double fuelPrice = Convert.ToDouble(Console.ReadLine());
 
-            double startkm = Convert.ToDouble(Console.ReadLine());​​
-
-            Console.Write("Hvor langt køre bilen på literen?");​
-
-            double kmPerLiter = Convert.ToDouble(Console.ReadLine());​​
-
-            Console.Write("Hvor lang er køreturen?");​
-
-            double distance = Convert.ToDouble(Console.ReadLine());​​
-
-            Console.Write("Hvad er prisen pr. liter brændstof i DKK?");​
-
-            double fuelPrice = Convert.ToDouble(Console.ReadLine());​​
-
-            double fuelNeeded = distance / kmPerLiter;​
-
-            double tripCost = fuelNeeded * fuelPrice;​
-
-            double endkm = startkm + distance;​
-
-            Console.ReadLine();
-
-            Console.WriteLine($"Brændstofforbrug: {fuelNeeded.ToString("F2")} liter");​
-
-            Console.WriteLine($"Pris for køreturen: {tripCost.ToString("F2")} DKK");​
-
-            Console.WriteLine($"Start Kilometerstand: {startkm.ToString("F2")}");​
-
-            Console.WriteLine($"Slut kilometerstand: {endkm.ToString("F2")}");​
-
-            Console.WriteLine($"Køreturen på {distance} km koster {tripCost.ToString("F2")} DKK og bruger {fuelNeeded.ToString("F2")} liter brændstof.");​
-
-            Console.ReadLine();
-            Console.Write("Hvad er bilens nuværende kilometerafstand?");​
-
-            double startkm = Convert.ToDouble(Console.ReadLine());​
-
-            Console.Write("Hvor langt køre bilen på literen?");​
-
-            double kmPerLiter = Convert.ToDouble(Console.ReadLine());​​
-
-            Console.Write("Hvor lang er køreturen?");​
-
-            double distance = Convert.ToDouble(Console.ReadLine());​​
-
-            Console.Write("Hvad er prisen pr. liter brændstof i DKK?");​
-
-            double fuelPrice = Convert.ToDouble(Console.ReadLine());​​
-
-            double fuelNeeded = distance / kmPerLiter;​
-
-            double tripCost = fuelNeeded * fuelPrice;​
-
+            double fuelNeeded = distance / kmPerLiter;
+            double tripCost = fuelNeeded * fuelPrice;
             double endkm = startkm + distance;
 
-            Console.WriteLine($"Brændstofforbrug: {fuelNeeded.ToString("F2")} liter");​
+            Console.WriteLine("========================================");
+            Console.WriteLine("              KØRSELSRAPPORT             ");
+            Console.WriteLine("========================================");
 
-            Console.WriteLine($"Pris for køreturen: {tripCost.ToString("F2")} DKK");​
+            Console.WriteLine($"Navn: {name}");
+            Console.WriteLine();
 
-            Console.WriteLine($"Start Kilometerstand: {startkm.ToString("F2")}");​
+            Console.WriteLine("----- Biloplysninger -----");
+            Console.WriteLine($"Mærke           : {brand}");
+            Console.WriteLine($"Model           : {model}");
+            Console.WriteLine($"Årgang          : {year}");
+            Console.WriteLine($"Gear            : {gearType}");
+            Console.WriteLine();
 
-            Console.WriteLine($"Slut kilometerstand: {endkm.ToString("F2")}");​
+            Console.WriteLine("----- Brændstof & Kørsel -----");
+            Console.WriteLine($"Brændstofforbrug: {fuelNeeded.ToString("F2")} liter");
+            Console.WriteLine($"Pris            : {tripCost.ToString("F2")} DKK");
+            Console.WriteLine();
 
-            Console.WriteLine($"Køreturen på {distance} km koster {tripCost.ToString("F2")} DKK og bruger {fuelNeeded.ToString("F2")} liter brændstof.");​
-​
+            Console.WriteLine("----- Kilometerstand -----");
+            Console.WriteLine($"Start           : {startkm.ToString("F2")} km");
+            Console.WriteLine($"Slut            : {endkm.ToString("F2")} km");
+
+            Console.WriteLine("========================================");
 
             Console.ReadLine();
+            // FULD SÆTNING 
+            //Console.WriteLine($"{name} har valgt en {brand} {model} og er fra {year} som har et {gearType} gear");
         }
+
     }
 }
