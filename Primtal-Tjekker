@@ -3,13 +3,13 @@ static bool ErPrimtal(int tal)
     if (tal <= 1)
         return false;
 
-    for (int i = 2; i <= tal - 1; i++)
+    int grænse = (int)Math.Sqrt(tal);
+
+    for (int i = 2; i <= grænse; i++)
     {
         if (tal % i == 0)
-        {
-            return false; 
-        }
+            return false;
     }
 
-    return true; 
+    return true;
 }
