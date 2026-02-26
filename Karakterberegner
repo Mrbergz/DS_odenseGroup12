@@ -1,32 +1,39 @@
-static void Main(string[] args)
+class Program
 {
-    Console.Write("Indtast score (0-100): ");
-    string input = Console.ReadLine();
-
-    if (!int.TryParse(input, out int score))
+    static void Main(string[] args)
     {
-        Console.WriteLine("Fejl: Du skal indtaste et tal.");
-        return;
+        Console.Write("Indtast score (0-100): ");
+        string input = Console.ReadLine();
+
+        if (!int.TryParse(input, out int score))
+        {
+            Console.WriteLine("Fejl: Du skal indtaste et tal.");
+            return;
+        }
+
+        if (!ErGyldigScore(score))
+        {
+            Console.WriteLine("Fejl: Scoren skal være mellem 0 og 100.");
+            return;
+        }
+
+        int karakter = BeregnKarakter(score);
+        Console.WriteLine($"Karakter: {karakter}");
     }
 
-    if (score < 0 || score > 100)
+    static bool ErGyldigScore(int score)
     {
-        Console.WriteLine("Fejl: Scoren skal være mellem 0 og 100.");
-        return;
+        return score >= 0 && score <= 100;
     }
 
-    if (score >= 90)
-        Console.WriteLine("Karakter: 12");
-    else if (score >= 80)
-        Console.WriteLine("Karakter: 10");
-    else if (score >= 65)
-        Console.WriteLine("Karakter: 7");
-    else if (score >= 50)
-        Console.WriteLine("Karakter: 4");
-    else if (score >= 25)
-        Console.WriteLine("Karakter: 02");
-    else if (score >= 10)
-        Console.WriteLine("Karakter: 00");
-    else
-        Console.WriteLine("Karakter: -3");
+    static int BeregnKarakter(int score)
+    {
+        if (score >= 90) return 12;
+        if (score >= 80) return 10;
+        if (score >= 65) return 7;
+        if (score >= 50) return 4;
+        if (score >= 25) return 2;
+        if (score >= 10) return 0;
+        return -3;
+    }
 }
