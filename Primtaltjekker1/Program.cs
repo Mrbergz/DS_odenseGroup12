@@ -1,0 +1,32 @@
+﻿class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Find alle primtal op til: ");
+        int n = int.Parse(Console.ReadLine());
+
+        for (int i = 2; i <= n; i++)
+        {
+            if (ErPrimtal(i))
+            {
+                Console.Write(i + " ");
+            }
+        }
+    }
+
+    static bool ErPrimtal(int tal)
+    {
+        if (tal <= 1)
+            return false;
+
+        int grænse = (int)Math.Sqrt(tal);
+
+        for (int i = 2; i <= grænse; i++)
+        {
+            if (tal % i == 0)
+                return false;
+        }
+
+        return true;
+    }
+}
