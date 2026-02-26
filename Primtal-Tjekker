@@ -1,1 +1,15 @@
+static bool ErPrimtal(int tal)
+{
+    if (tal <= 1)
+        return false;
 
+    for (int i = 2; i <= tal - 1; i++)
+    {
+        if (tal % i == 0)
+        {
+            return false; 
+        }
+    }
+
+    return true; 
+}
