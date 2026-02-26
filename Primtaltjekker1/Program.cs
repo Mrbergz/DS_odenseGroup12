@@ -22,7 +22,7 @@ class Program
 
         int grænse = (int)Math.Sqrt(tal); // HER BEREGNER VI KVADRATRODEN
 
-        for (int i = 2; i <= grænse; i++) // HER DIVIDER VI
+        for (int i = 2; i <= grænse; i++) // HER TJEKKER VI REST VED DIVISION, OP TIL KVADRATRODEN
         {
             if (tal % i == 0)
                 return false;
