@@ -1,1 +1,20 @@
+static void Main(string[] args)
+{
+    Console.Write("Indtast score (0-100): ");
+    int score = int.Parse(Console.ReadLine());
 
+    if (score >= 90)
+        Console.WriteLine("Karakter: 12");
+    else if (score >= 80)
+        Console.WriteLine("Karakter: 10");
+    else if (score >= 65)
+        Console.WriteLine("Karakter: 7");
+    else if (score >= 50)
+        Console.WriteLine("Karakter: 4");
+    else if (score >= 25)
+        Console.WriteLine("Karakter: 02");
+    else if (score >= 10)
+        Console.WriteLine("Karakter: 00");
+    else
+        Console.WriteLine("Karakter: -3");
+}
