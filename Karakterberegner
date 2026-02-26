@@ -1,7 +1,19 @@
 static void Main(string[] args)
 {
     Console.Write("Indtast score (0-100): ");
-    int score = int.Parse(Console.ReadLine());
+    string input = Console.ReadLine();
+
+    if (!int.TryParse(input, out int score))
+    {
+        Console.WriteLine("Fejl: Du skal indtaste et tal.");
+        return;
+    }
+
+    if (score < 0 || score > 100)
+    {
+        Console.WriteLine("Fejl: Scoren skal være mellem 0 og 100.");
+        return;
+    }
 
     if (score >= 90)
         Console.WriteLine("Karakter: 12");
