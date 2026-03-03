@@ -1,25 +1,25 @@
-﻿namespace CarAppUge10
+using CarAppUge10;
+
+namespace CarApp
 {
     internal class Program
     {
-        // ===== FÆLLES VARIABLER =====
-        // Gemmer grundlæggende biloplysninger
-        static string name;
-        static string brand;
-        static string model;
-        static int year;
-        static char gearType;
 
-        // Gemmer bilens aktuelle tilstand
-        static double odometer;        // Kilometerstand
-        static double kmPerLiter;       // Brændstofforbrug
-        static bool isEngineOn = false; // Motorens status
-
-        // Gemmer prisen for den senest beregnede tur
-        static double lastTripPrice = 0;
+        private static object lastTripPrice;
+        private static bool isEngineOn;
+        private static string? brand;
+        private static string? model;
+        private static int year;
+        private static char gearType;
+        private static double odometer;
+        private static double kmPerLiter;
 
         static void Main(string[] args)
         {
+
+            // myCar = new Car("Mærke", "Model", Årgang, Gear, Brændstoftype, Kmprliter);
+            Car myCar1 = new Car("VW", "UP", 2017, 'A', "Benzin", 15);
+
             // Styrer om programmet skal køre videre
             bool running = true;
 
@@ -61,7 +61,7 @@
                         // Simulerer en køretur
                         Console.Write("Indtast distance i km: ");
                         double distance = Convert.ToDouble(Console.ReadLine());
-                        Drive(distance);
+                        myCar1.Drive(distance);
                         break;
 
                     case "4":
@@ -76,7 +76,7 @@
                         string fuelType = Console.ReadLine();
 
                         // Gemmer returværdien
-                        lastTripPrice = CalculateTripPrice(tripDistance, literPrice, fuelType);
+                        lastTripPrice = myCar1.CalculateTripPrice(tripDistance, literPrice, fuelType);
                         Console.WriteLine($"Pris for turen: {lastTripPrice:F2} DKK");
                         break;
 
@@ -88,7 +88,7 @@
 
                     case "6":
                         // Udskriver alle biloplysninger
-                        PrintCarDetails();
+                        myCar1.GetCarDetails();
                         break;
 
                     case "7":
@@ -113,15 +113,11 @@
             }
         }
 
-        // ===== 1. READ CAR DETAILS =====
         // Indlæser og gemmer bilens oplysninger
         static void ReadCarDetails()
         {
             Console.Clear();
             Console.WriteLine("=== Indtast biloplysninger ===");
-
-            Console.Write("Navn: ");
-            name = Console.ReadLine();
 
             Console.Write("Bilmærke: ");
             brand = Console.ReadLine();
@@ -144,51 +140,6 @@
             Console.WriteLine("Biloplysninger gemt.");
         }
 
-        // ===== 2. DRIVE =====
-        // Simulerer kørsel og opdaterer kilometerstand
-        static void Drive(double distance)
-        {
-            // Tjekker om motoren er tændt
-            if (isEngineOn)
-            {
-                // Opdaterer odometer
-                odometer += distance;
-                Console.WriteLine($"Bilen kørte {distance} km.");
-                Console.WriteLine($"Ny kilometerstand: {odometer} km.");
-            }
-            else
-            {
-                // Hvis motoren er slukket
-                Console.WriteLine("Motoren er slukket. Start motoren før kørsel.");
-            }
-        }
-
-        // ===== 3. CALCULATE TRIP PRICE =====
-        // Beregner og returnerer prisen for en køretur
-        static double CalculateTripPrice(double distance, double literPrice, string fuelType)
-        {
-            // Undgår division med 0
-            if (kmPerLiter == 0)
-            {
-                Console.WriteLine("Fejl: kmPerLiter må ikke være 0.");
-                return 0;
-            }
-
-            // Tjekker gyldig brændstoftype
-            if (fuelType.ToLower() != "benzin" && fuelType.ToLower() != "diesel")
-            {
-                Console.WriteLine("Fejl: Brændstoftype skal være benzin eller diesel.");
-                return 0;
-            }
-
-            // Beregner brændstofforbrug
-            double fuelUsed = distance / kmPerLiter;
-
-            // Returnerer den samlede pris
-            return fuelUsed * literPrice;
-        }
-
-        // ===== 4. IS PALINDROME =====
         // Tjekker om et tal er et palindrom
         static bool IsPalindrome(int km)
         {
@@ -211,23 +162,7 @@
             return true;
         }
 
-        // ===== 5. PRINT CAR DETAILS =====
-        // Udskriver alle gemte biloplysninger
-        static void PrintCarDetails()
-        {
-            Console.Clear();
-            Console.WriteLine("===== BILOPLYSNINGER =====");
-            Console.WriteLine($"Navn: {name}");
-            Console.WriteLine($"Mærke: {brand}");
-            Console.WriteLine($"Model: {model}");
-            Console.WriteLine($"Årgang: {year}");
-            Console.WriteLine($"Gear: {gearType}");
-            Console.WriteLine($"Kilometerstand: {odometer} km");
-            Console.WriteLine($"Km pr. liter: {kmPerLiter}");
-            Console.WriteLine($"Sidste turpris: {lastTripPrice:F2} DKK");
-        }
 
-        // ===== 6. PRINT ALL TEAM CARS =====
         // Udskriver alle teammedlemmer/biler vha. for-loop
         static void PrintAllTeamCars()
         {
