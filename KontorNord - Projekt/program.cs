@@ -10,7 +10,7 @@ namespace KontorNord
     {
         static void Main(string[] args)
         {
-          
+        var th= 456;  
 
         }
     }
