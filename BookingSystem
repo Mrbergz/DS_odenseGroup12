@@ -1,1 +1,36 @@
+using System;
+
+namespace BookingSystem
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // BOOKING SYSTEM MENUEN
+            Console.WriteLine("##### KONTORNORD - BOOKINGSYSTEM #####");
+            Console.WriteLine("1. Book et møde");
+            Console.WriteLine("2. Tjek Kalenderen");
+            Console.WriteLine("3. Afslut");
+
+            Console.Write("Vælg en mulighed ");
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    Console.WriteLine("Book møde");
+                    break;
+                case "2":
+                    Console.WriteLine("Se Kalenderen");
+                    break;
+                case "3":
+                    Console.WriteLine("Programmet Afsluttes");
+                    break;
+                default:
+                    Console.WriteLine("Ugyldigt valg");
+                    break;
+            }
+        }
+    }
+}
 
