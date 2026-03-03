@@ -50,7 +50,7 @@ namespace CarAppUge10
             set { fuelType = value; }
         }
 
-        public double KmPerliter
+        public double kmPerliter
         {
             get { return kmPerLiter; }
             set { kmPerLiter = value; }
@@ -60,6 +60,18 @@ namespace CarAppUge10
         { 
             get { return isEngineOn; } 
             set { isEngineOn = value; } 
+        }
+
+        //3. KONSTRUKTØR //
+        public Car(string brand, string model, int year, double kmPerLiter)
+        {
+            this.brand = brand;
+            this.model = model;
+            this.year = year;
+            this.kmPerLiter = kmPerLiter;
+            this.odometer = 0;
+            this.IsEngineOn = false;
+
         }
 
     }
