@@ -1,0 +1,20 @@
+Projekt Nord:
+
+Specifikation.
+
+Behov + brief.
+
+BMC.
+
+Artefakter + behovsafdækning.
+
+Prototype udv,
+
+Struktur og elementudvikling: Relationer.
+
+Programmering--> udvikling (kode)
+
+Konsol + debug.
+
+Fremtidig Implementering/udvikling.
+
