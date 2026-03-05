@@ -26,7 +26,7 @@ namespace CarApp
                 myCar.Drive(trip);
             }
 
-            // Menu loop
+            // Menu loop Car App
             bool running = true;
 
             while (running)
