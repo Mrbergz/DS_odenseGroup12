@@ -19,11 +19,6 @@ namespace MeetingBooking
             EndTime = endTime;
             BookingDate = startTime.Date;
         }
-        
-        public TimeSpan Duration()
-        {
-            return EndTime - StartTime;
-        }
 
         public string GetBookingDetails()
         {
@@ -32,8 +27,7 @@ namespace MeetingBooking
             $"Lokale: {_room.Name}\n" +
             $"Dato: {BookingDate:dd-MM-yyyy}\n" +
             $"Start: {StartTime}\n" +
-            $"Slut: {EndTime}\n" +
-            $"Varighed: {Duration()}\n";
+            $"Slut: {EndTime}\n";
         }
     }
 }
