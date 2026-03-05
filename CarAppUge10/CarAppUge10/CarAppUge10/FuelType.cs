@@ -1,7 +1,10 @@
-public enum FuelType
+namespace CarAppUge10
 {
-    Benzin,
-    Diesel,
-    Electric,
-    Hybrid
+    public enum FuelType
+    {
+        Benzin,
+        Diesel,
+        Electric,
+        Hybrid
+    }
 }
