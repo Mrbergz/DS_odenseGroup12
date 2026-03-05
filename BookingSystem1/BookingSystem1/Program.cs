@@ -8,7 +8,10 @@ namespace MeetingBookingApp
     {
         static void Main(string[] args)
         {
-            
+            Room roomA = new Room("Lokale A");
+            Room roomB = new Room("Lokale B");
+            Room roomC = new Room("Lokale C");
+
         }
     }
 }
