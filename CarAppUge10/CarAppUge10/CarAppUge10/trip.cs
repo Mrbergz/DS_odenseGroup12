@@ -1,3 +1,5 @@
+using System;
+
 namespace CarAppUge10
 {
     internal class Trip
@@ -47,4 +49,3 @@ namespace CarAppUge10
         }
     }
 }
-
