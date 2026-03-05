@@ -14,26 +14,33 @@ namespace MeetingBookingApp
 
             List<Booking> bookings = new List<Booking>
             {
-                new Booking(roomA, "Lokale A", DateTime.Now, DateTime.Now.AddHours(1)),
-                new Booking(roomB, "Lokale B", DateTime.Now.AddHours(2), DateTime.Now.AddHours(3)),
-                new Booking(roomA, "Lokale C", DateTime.Now.AddHours(4), DateTime.Now.AddHours(5))
+                new Booking(roomA, "Team Møde", DateTime.Now, DateTime.Now.AddHours(1)),
+                new Booking(roomB, "Kundepræsentation", DateTime.Now.AddHours(2), DateTime.Now.AddHours(3)),
+                new Booking(roomA, "Planlægningsmøde", DateTime.Now.AddHours(4), DateTime.Now.AddHours(5))
             };
 
             roomA.AddBooking(bookings[0]);
             roomB.AddBooking(bookings[1]);
             roomA.AddBooking(bookings[2]);
 
-            static void PrintRoomBookings(Room room)
+            Console.WriteLine("===== ALLE BOOKINGER =====");
+
+            PrintRoomBookings(roomA);
+            PrintRoomBookings(roomB);
+            PrintRoomBookings(roomC);
+
+            Console.WriteLine("\nTryk Enter for at afslutte...");
+            Console.ReadLine();
+        }
+
+        static void PrintRoomBookings(Room room)
+        {
+            Console.WriteLine($"\n--- {room.Name} ---");
+
+            foreach (var booking in room.GetBookings())
             {
-                Console.WriteLine($"\n--- {room.Name} ---");
-
-                foreach (var booking in room.GetBookings())
-                {
-                    Console.WriteLine(booking.GetBookingDetails());
-                }
+                Console.WriteLine(booking.GetBookingDetails());
             }
-
-            
         }
     }
 }
