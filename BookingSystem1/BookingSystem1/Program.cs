@@ -18,6 +18,10 @@ namespace MeetingBookingApp
                 new Booking(roomB, "Lokale B", DateTime.Now.AddHours(2), DateTime.Now.AddHours(3)),
                 new Booking(roomA, "Lokale C", DateTime.Now.AddHours(4), DateTime.Now.AddHours(5))
             };
+
+            roomA.AddBooking(bookings[0]);
+            roomB.AddBooking(bookings[1]);
+            roomA.AddBooking(bookings[2]);
             
         }
     }
