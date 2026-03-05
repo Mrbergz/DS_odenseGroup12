@@ -44,10 +44,22 @@ namespace CarAppUge10
             set { odometer = value; }
         }
 
-        public string FuelType
+        public FuelType FuelType { get; private set; }
+
+
+
+        public Car(string brand, string model, int year, string licensePlate,
+
+                   FuelType fuelType, double kmPerLiter)
+
         {
-            get { return fuelType; }
-            set { fuelType = value; }
+
+            // ... 
+
+            FuelType = fuelType;
+
+            KmPerLiter = kmPerLiter;
+
         }
 
         public double kmPerliter
