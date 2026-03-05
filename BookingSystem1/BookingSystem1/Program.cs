@@ -14,9 +14,9 @@ namespace MeetingBookingApp
 
             List<Booking> bookings = new List<Booking>
             {
-                new Booking(roomA, "Team Møde", DateTime.Now, DateTime.Now.AddHours(1)),
-                new Booking(roomB, "Kundepræsentation", DateTime.Now.AddHours(2), DateTime.Now.AddHours(3)),
-                new Booking(roomA, "Planlægningsmøde", DateTime.Now.AddHours(4), DateTime.Now.AddHours(5))
+                new Booking(roomA, "Kundemøde", DateTime.Now, DateTime.Now.AddHours(1)),
+                new Booking(roomB, "Kundemøde", DateTime.Now.AddHours(2), DateTime.Now.AddHours(3)),
+                new Booking(roomA, "Kundemøde", DateTime.Now.AddHours(4), DateTime.Now.AddHours(5))
             };
 
             roomA.AddBooking(bookings[0]);
