@@ -25,5 +25,15 @@ namespace MeetingBooking
             return EndTime - StartTime;
         }
 
+        public string GetBookingDetails()
+        {
+            return "===== BOOKING =====\n" +
+            $"Titel: {Title}\n" +
+            $"Lokale: {_room.Name}\n" +
+            $"Dato: {BookingDate:dd-MM-yyyy}\n" +
+            $"Start: {StartTime}\n" +
+            $"Slut: {EndTime}\n" +
+            $"Varighed: {Duration()}\n";
+        }
     }
 }
