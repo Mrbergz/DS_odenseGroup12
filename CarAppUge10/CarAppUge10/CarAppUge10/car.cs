@@ -12,6 +12,12 @@ namespace CarAppUge10
         private bool isEngineOn;
         private double kmPerLiter;
         private double lastTripPrice;
+        private double Distance;
+        private DateTime TripDate;
+        private DateTime StartTime;
+        private DateTime EndTime;
+        private Car Car;
+
 
         //2. PROPERTIES GET/SET) //
         public string Brand 
@@ -88,8 +94,13 @@ namespace CarAppUge10
 
         }
 
-        public Car()
+        public Trip(Car car, double distance, DateTime startTime, DateTime endTime)
         {
+            Car = car;
+            Distance = distance;
+            TripDate = startTime.Date;
+            StartTime = startTime;
+            EndTime = endTime;
         }
 
         //4. METODER //
@@ -158,6 +169,11 @@ namespace CarAppUge10
                 $"Km pr. liter: {kmPerLiter}\n" +
                 $"Sidste turpris: {lastTripPrice:F2} DKK";
         }
+        //Turens varighed
+        //Beregn brændstofforbrug for turen
+        //Beregn turens pris
+        //Udskriv turens detaljer (distance, varighed, brændstofforbrug, pris)
+
 
     }
 }
