@@ -6,5 +6,7 @@ namespace MeetingBooking
     {
         private string name;
         private List<Booking> _bookings = new List<Booking>();
+
+        public string Name => name;
     }
 }
