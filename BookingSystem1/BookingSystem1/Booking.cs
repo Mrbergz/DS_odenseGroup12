@@ -19,6 +19,11 @@ namespace MeetingBooking
             EndTime = endTime;
             BookingDate = startTime.Date;
         }
+        
+        public TimeSpan Duration()
+        {
+            return EndTime - StartTime;
+        }
 
     }
 }
