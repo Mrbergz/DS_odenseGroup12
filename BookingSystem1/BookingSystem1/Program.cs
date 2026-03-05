@@ -22,6 +22,17 @@ namespace MeetingBookingApp
             roomA.AddBooking(bookings[0]);
             roomB.AddBooking(bookings[1]);
             roomA.AddBooking(bookings[2]);
+
+            static void PrintRoomBookings(Room room)
+            {
+                Console.WriteLine($"\n--- {room.Name} ---");
+
+                foreach (var booking in room.GetBookings())
+                {
+                    Console.WriteLine(booking.GetBookingDetails());
+                }
+            }
+
             
         }
     }
