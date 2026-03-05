@@ -13,5 +13,15 @@ namespace MeetingBooking
         {
             this.name = name;
         }
+
+        public void AddBooking(Booking booking)
+        {
+            _bookings.Add(booking);
+        }
+
+        public List<Booking> GetBookings()
+        {
+            return _bookings;
+        }
     }
 }
