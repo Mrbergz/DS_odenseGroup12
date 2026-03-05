@@ -5,7 +5,6 @@ namespace CarAppUge10
 {
     internal class Car
     {
-        // PRIVATE ATTRIBUTTER
         private string brand;
         private string model;
         private int year;
@@ -15,9 +14,9 @@ namespace CarAppUge10
         private double kmPerLiter;
         private double lastTripPrice;
 
+        // Liste til ture
         private List<Trip> _trips = new List<Trip>();
 
-        // PROPERTIES
         public string Brand { get => brand; set => brand = value; }
         public string Model { get => model; set => model = value; }
         public int Year { get => year; set => year = value; }
@@ -27,7 +26,6 @@ namespace CarAppUge10
         public double KmPerLiter { get => kmPerLiter; set => kmPerLiter = value; }
         public bool IsEngineOn { get => isEngineOn; set => isEngineOn = value; }
 
-        // KONSTRUKTØR
         public Car(string brand, string model, int year, char gear, string fuelType, double kmPerLiter)
         {
             this.brand = brand;
@@ -41,7 +39,6 @@ namespace CarAppUge10
             FuelType = Enum.Parse<FuelType>(fuelType, true);
         }
 
-        // METODER
         public void StartEngine() => isEngineOn = true;
         public void StopEngine() => isEngineOn = false;
 
@@ -58,6 +55,7 @@ namespace CarAppUge10
             Console.WriteLine($"Ny kilometerstand: {odometer} km.");
         }
 
+        // Drive med Trip-objekt
         public void Drive(Trip newTrip)
         {
             if (!isEngineOn)
@@ -66,10 +64,7 @@ namespace CarAppUge10
                 return;
             }
 
-            // Opdater odometer
             odometer += newTrip.Distance;
-
-            // Gem turen
             _trips.Add(newTrip);
 
             Console.WriteLine($"Turen på {newTrip.Distance} km er registreret.");
@@ -109,6 +104,7 @@ namespace CarAppUge10
                 $"Sidste turpris: {lastTripPrice:F2} DKK";
         }
 
+        // Returnér alle ture
         public List<Trip> GetTrips()
         {
             return _trips;
