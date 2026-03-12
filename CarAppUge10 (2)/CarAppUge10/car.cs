@@ -104,10 +104,24 @@ namespace CarAppUge10
                 $"Sidste turpris: {lastTripPrice:F2} DKK";
         }
 
-        // Returnér alle ture
         public List<Trip> GetTrips()
         {
             return _trips;
         }
+
+        public List<Trip> GetTripsByDate(DateTime date)
+        {
+            List<Trip> result = new List<Trip>();
+
+            foreach (Trip trip in _trips)
+            {
+                if (trip.TripDate.Date == date.Date)
+                {
+                    result.Add(trip);
+                }
+            }
+
+            return result;
+        }
     }
-}
+}   
