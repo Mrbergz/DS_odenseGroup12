@@ -14,7 +14,6 @@ namespace CarAppUge10
         private double kmPerLiter;
         private double lastTripPrice;
 
-        // Liste til ture
         private List<Trip> _trips = new List<Trip>();
 
         public string Brand { get => brand; set => brand = value; }
@@ -55,7 +54,6 @@ namespace CarAppUge10
             Console.WriteLine($"Ny kilometerstand: {odometer} km.");
         }
 
-        // Drive med Trip-objekt
         public void Drive(Trip newTrip)
         {
             if (!isEngineOn)
@@ -115,7 +113,7 @@ namespace CarAppUge10
 
             foreach (Trip trip in _trips)
             {
-                if (trip.TripDate.Date == date.Date)
+                if (trip.StartTime.Date == date.Date) // ← RETTET
                 {
                     result.Add(trip);
                 }
@@ -123,20 +121,20 @@ namespace CarAppUge10
 
             return result;
         }
-        
+
         public List<Trip> GetTripsInTimeInterval(DateTime startTime, DateTime endTime)
         {
             List<Trip> result = new List<Trip>();
 
             foreach (Trip trip in _trips)
-           {
-            if (trip.StartTime >= startTime && trip.EndTime <= endTime)
             {
-                result.Add(trip);
+                if (trip.StartTime >= startTime && trip.EndTime <= endTime)
+                {
+                    result.Add(trip);
+                }
             }
-        }
 
-        return result;
+            return result;
         }
     }
-}   
+}
