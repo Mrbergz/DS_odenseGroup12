@@ -113,7 +113,7 @@ namespace CarAppUge10
 
             foreach (Trip trip in _trips)
             {
-                if (trip.StartTime.Date == date.Date) // ← RETTET
+                if (trip.StartTime.Date == date.Date) 
                 {
                     result.Add(trip);
                 }
