@@ -123,5 +123,20 @@ namespace CarAppUge10
 
             return result;
         }
+        
+        public List<Trip> GetTripsInTimeInterval(DateTime startTime, DateTime endTime)
+        {
+            List<Trip> result = new List<Trip>();
+
+            foreach (Trip trip in _trips)
+           {
+            if (trip.StartTime >= startTime && trip.EndTime <= endTime)
+            {
+                result.Add(trip);
+            }
+        }
+
+        return result;
+        }
     }
 }   
